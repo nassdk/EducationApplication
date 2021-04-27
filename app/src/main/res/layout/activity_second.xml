@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitySecond">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_clock"
+        app:title="Hoff на Новой риге" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:id="@+id/shopImageView"
+                android:layout_width="0dp"
+                android:layout_height="198dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shop_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/shopNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Hoff на Новой риге"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/shopImageView" />
+
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:drawablePadding="10dp"
+                android:text="+7 (495) 28-777-27"
+                app:drawableStartCompat="@drawable/ic_phone"
+                app:layout_constraintTop_toBottomOf="@+id/shopNameTextView" />
+
+            <View
+                android:id="@+id/phoneDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
+
+            <TextView
+                android:id="@+id/clockTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:drawablePadding="10dp"
+                android:text="Ежедневно с 10:00 до 22:00"
+                app:drawableStartCompat="@drawable/ic_clock"
+                app:layout_constraintEnd_toStartOf="@+id/scheduleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phoneDivider" />
+
+            <TextView
+                android:id="@+id/scheduleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="до закрытия 6 часов"
+                android:textColor="#64D569"
+                app:layout_constraintBaseline_toBaselineOf="@id/clockTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/clockTextView" />
+
+            <View
+                android:id="@+id/clockDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/clockTextView" />
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:drawablePadding="10dp"
+                android:text="@string/location_text"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@+id/clockDivider" />
+
+            <View
+                android:id="@+id/locationDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
+
+            <!-- Кнопка Маршрут -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/routeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="20dp"
+                android:gravity="start|center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
+                android:text="Маршрут"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@+id/transportButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/locationDivider" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/transportButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="20dp"
+                android:gravity="start|center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="0dp"
+                android:text="Транспорт"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/routeButton"
+                app:layout_constraintTop_toBottomOf="@+id/locationDivider" />
+
+            <View
+                android:id="@+id/buttonsDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/routeButton" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/desc_text"
+                app:layout_constraintTop_toBottomOf="@+id/buttonsDivider" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
